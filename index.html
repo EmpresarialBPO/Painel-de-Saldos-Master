@@ -101,21 +101,6 @@
   /* ============================ LAYOUT ============================ */
   main{ max-width:1400px; margin:0 auto; padding:24px 24px 24px; width:100%; }
 
-  .periodo-bar{
-    display:flex; align-items:center; gap:12px; flex-wrap:wrap;
-    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
-    box-shadow:var(--shadow-sm); padding:12px 16px; margin-bottom:22px;
-  }
-  .periodo-bar .pill{
-    display:inline-flex; align-items:center; gap:7px;
-    background:var(--brand-light); color:var(--brand-dark);
-    font-size:12.5px; font-weight:700; padding:5px 11px; border-radius:999px;
-  }
-  .periodo-bar .pill svg{ width:14px; height:14px; }
-  .periodo-bar .meta{ font-size:12px; color:var(--ink-muted); }
-  .periodo-bar .meta b{ color:var(--ink-secondary); font-weight:600; }
-  .periodo-bar .spacer{ margin-left:auto; }
-
   section.topic{ margin-top:32px; }
   .topic-heading{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
   .topic-heading .topic-num{
@@ -125,7 +110,6 @@
   }
   .topic-heading .topic-num svg{ width:16px; height:16px; }
   .topic-heading h2{ font-size:18px; font-weight:700; margin:0; color:var(--ink-primary); }
-  .topic-heading .hint{ font-size:12px; color:var(--ink-muted); margin-left:auto; text-align:right; }
 
   .panel{
     background:var(--surface); border-radius:var(--radius-lg);
@@ -150,7 +134,6 @@
     transition:transform .18s, box-shadow .18s;
   }
   .card:hover{ transform:translateY(-2px); box-shadow:var(--shadow-lg); }
-  .card .accent{ position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--brand); }
 
   .card-top{ display:flex; align-items:center; gap:11px; }
   .card-avatar{
@@ -204,7 +187,6 @@
   .card.total .card-value{ font-size:46px; letter-spacing:-0.03em; font-variant-numeric:normal; }
   .card.total .card-avatar{ background:rgba(255,255,255,.14); }
   .card.total .card-avatar svg{ color:#fff; }
-  .card.total .accent{ background:#fff; opacity:.55; }
   .card.total .breakdown{
     display:flex; gap:10px; flex-wrap:wrap; margin-left:auto;
   }
@@ -224,42 +206,6 @@
   .card.total .chip.up{ background:rgba(255,255,255,.16); color:#c8f0c8; }
   .card.total .chip.down{ background:rgba(255,255,255,.16); color:#ffc9c9; }
   .card.total .chip.flat{ background:rgba(255,255,255,.16); color:rgba(255,255,255,.8); }
-
-  /* ============================ TABELAS ============================ */
-  .table-wrap{ width:100%; overflow-x:auto; }
-  table.fin{ width:100%; border-collapse:collapse; font-size:13px; font-variant-numeric:tabular-nums; }
-  table.fin thead th{
-    text-align:left; font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
-    color:var(--ink-muted); padding:0 10px 10px; border-bottom:1px solid var(--border); white-space:nowrap;
-  }
-  table.fin thead th.num{ text-align:right; }
-  table.fin tbody tr{ border-bottom:1px solid var(--grid); }
-  table.fin tbody tr:hover{ background:var(--surface-alt); }
-  table.fin td{ padding:11px 10px; vertical-align:middle; }
-  table.fin td.num{ text-align:right; font-weight:600; white-space:nowrap; }
-  table.fin td.conta{ font-weight:600; color:var(--ink-primary); }
-  table.fin .dot{ display:inline-block; width:9px; height:9px; border-radius:3px; margin-right:9px; vertical-align:middle; flex:none; }
-  table.fin td .sub{ font-size:11px; color:var(--ink-muted); font-weight:400; margin-top:1px; }
-  table.fin td.num.in{ color:var(--receita-text); }
-  table.fin td.num.out{ color:var(--despesa-text); }
-  table.fin td.num.zero{ color:var(--ink-muted); font-weight:400; }
-  table.fin td.num.saldo{ font-weight:800; color:var(--ink-primary); }
-  table.fin td.num.saldo.neg{ color:var(--despesa-text); }
-  table.fin tr.total-row{ background:var(--brand-light); }
-  table.fin tr.total-row:hover{ background:var(--brand-light); }
-  table.fin tr.total-row td{ border-top:2px solid var(--brand); border-bottom:none; padding-top:13px; padding-bottom:13px; font-weight:800; color:var(--brand-dark); }
-  table.fin tr.total-row td.num.in{ color:var(--receita-text); }
-  table.fin tr.total-row td.num.out{ color:var(--despesa-text); }
-  .share-cell{ min-width:120px; }
-  .share-cell .meter{ margin-top:5px; }
-  .share-cell .pct{ font-size:11.5px; font-weight:700; color:var(--ink-secondary); }
-
-  .nota{
-    display:flex; gap:8px; align-items:flex-start;
-    font-size:11.5px; color:var(--ink-muted); line-height:1.5;
-    margin-top:14px; padding-top:12px; border-top:1px solid var(--border);
-  }
-  .nota svg{ width:14px; height:14px; flex:none; margin-top:1px; }
 
   /* detalhe por conta */
   .detalhe-grid{ display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(290px, 1fr)); }
@@ -338,20 +284,12 @@
     margin:0 0 7px; padding-bottom:4px; border-bottom:1px solid rgba(11,11,11,0.10);
   }
   .pdf-page table{ width:100%; border-collapse:collapse; font-size:11.5px; }
-  .pdf-page table th{
-    text-align:left; font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
-    color:#898781; padding:0 7px 6px; border-bottom:1px solid rgba(11,11,11,0.10);
-  }
-  .pdf-page table th.num{ text-align:right; }
   .pdf-page table td{ padding:8px 7px; border-bottom:1px solid #e9e8e3; }
   .pdf-page table td.num{ text-align:right; font-weight:600; white-space:nowrap; }
   .pdf-page table td.num.in{ color:#046b04; }
   .pdf-page table td.num.out{ color:#a92f2f; }
   .pdf-page table td.num.zero{ color:#898781; font-weight:400; }
   .pdf-page table td.num.saldo{ font-weight:800; }
-  .pdf-page table tr.tot td{ background:#e9f0fb; border-top:1.5px solid #124B9C; border-bottom:none; font-weight:800; color:#0d3a75; }
-  .pdf-page table tr.tot td.num.in{ color:#046b04; }
-  .pdf-page table tr.tot td.num.out{ color:#a92f2f; }
   .pdf-dot{ display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:8px; flex:none; }
   .pdf-contas{ display:grid; grid-template-columns:1fr 1fr; gap:11px; }
   .pdf-conta{ border:1px solid rgba(11,11,11,0.10); border-radius:8px; overflow:hidden; }
@@ -418,27 +356,15 @@
 
 <main id="painelRoot">
 
-  <div class="periodo-bar">
-    <span class="pill">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-      <span id="periodoTexto">Período: 04/09 à 08/09/2026</span>
-    </span>
-    <span class="meta" id="clienteTexto">Cliente: <b>Plenaruis Reis e Mariano</b></span>
-    <span class="spacer"></span>
-    <span class="meta" id="atualizadoTexto">Atualizado em <b>08/09/2026, 15:54</b></span>
-  </div>
-
   <section class="topic" style="margin-top:0">
     <div class="topic-heading">
       <span class="topic-num">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
       </span>
       <h2>Saldos das Contas</h2>
-      <span class="hint" id="hintContas">Disponível em conta R$&nbsp;145.264,78 · Aplicado R$&nbsp;269,22</span>
     </div>
     <div class="saldo-grid" id="cardsGrid">
     <article class="card total">
-      <span class="accent"></span>
       <div class="total-left">
         <div class="card-top">
           <div class="card-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
@@ -474,7 +400,6 @@
       </div>
     </article>
     <article class="card">
-      <span class="accent" style="background:#ec7000"></span>
       <div class="card-top">
         <div class="card-avatar" style="background:rgba(236, 112, 0, 0.12); color:#ec7000"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><line x1="6" y1="15" x2="9" y2="15"></line></svg></div>
         <div class="card-ident">
@@ -491,7 +416,6 @@
       </div>
     </article>
     <article class="card">
-      <span class="accent" style="background:#3fa110"></span>
       <div class="card-top">
         <div class="card-avatar" style="background:rgba(63, 161, 16, 0.12); color:#3fa110"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><line x1="6" y1="15" x2="9" y2="15"></line></svg></div>
         <div class="card-ident">
@@ -508,7 +432,6 @@
       </div>
     </article>
     <article class="card">
-      <span class="accent" style="background:#00a3e0"></span>
       <div class="card-top">
         <div class="card-avatar" style="background:rgba(0, 163, 224, 0.12); color:#00a3e0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><line x1="6" y1="15" x2="9" y2="15"></line></svg></div>
         <div class="card-ident">
@@ -525,7 +448,6 @@
       </div>
     </article>
     <article class="card">
-      <span class="accent" style="background:#1f7a3d"></span>
       <div class="card-top">
         <div class="card-avatar" style="background:rgba(31, 122, 61, 0.12); color:#1f7a3d"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></div>
         <div class="card-ident">
@@ -541,106 +463,6 @@
         <div class="meter"><div class="meter-fill" style="width:0.18%; background:#1f7a3d"></div></div>
       </div>
     </article></div>
-  </section>
-
-  <section class="topic">
-    <div class="topic-heading">
-      <span class="topic-num">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg>
-      </span>
-      <h2>Movimentação Consolidada do Período</h2>
-    </div>
-    <div class="panel">
-      <div class="table-wrap">
-        <table class="fin" id="tabelaConsolidada">
-          <thead>
-            <tr>
-              <th>Conta</th>
-              <th class="num">Saldo anterior (A)</th>
-              <th class="num">Entrada (B)</th>
-              <th class="num">Saída (C)</th>
-              <th class="num">Saldo atual (A+B-C)</th>
-              <th class="num">Variação</th>
-              <th class="num">% do saldo</th>
-            </tr>
-          </thead>
-          <tbody id="tabelaConsolidadaBody">
-      <tr>
-        <td class="conta">
-          <span class="dot" style="background:#ec7000"></span>Conta Corrente Itaú
-          <div class="sub" style="margin-left:18px">Conta corrente</div>
-        </td>
-        <td class="num ">R$&nbsp;142.339,23</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num saldo ">R$&nbsp;142.339,23</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num share-cell">
-          <span class="pct">97,8%</span>
-          <div class="meter"><div class="meter-fill" style="width:97.80%; background:#ec7000"></div></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="conta">
-          <span class="dot" style="background:#3fa110"></span>Conta Corrente Sicredi
-          <div class="sub" style="margin-left:18px">Conta corrente</div>
-        </td>
-        <td class="num ">R$&nbsp;2.501,76</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num saldo ">R$&nbsp;2.501,76</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num share-cell">
-          <span class="pct">1,7%</span>
-          <div class="meter"><div class="meter-fill" style="width:1.72%; background:#3fa110"></div></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="conta">
-          <span class="dot" style="background:#00a3e0"></span>Mercado Pago
-          <div class="sub" style="margin-left:18px">Conta corrente</div>
-        </td>
-        <td class="num ">R$&nbsp;423,79</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num saldo ">R$&nbsp;423,79</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num share-cell">
-          <span class="pct">0,3%</span>
-          <div class="meter"><div class="meter-fill" style="width:0.29%; background:#00a3e0"></div></div>
-        </td>
-      </tr>
-      <tr>
-        <td class="conta">
-          <span class="dot" style="background:#1f7a3d"></span>SICREDINVEST
-          <div class="sub" style="margin-left:18px">Aplicação financeira</div>
-        </td>
-        <td class="num ">R$&nbsp;269,22</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num saldo ">R$&nbsp;269,22</td>
-        <td class="num zero">R$&nbsp;0,00</td>
-        <td class="num share-cell">
-          <span class="pct">0,2%</span>
-          <div class="meter"><div class="meter-fill" style="width:0.18%; background:#1f7a3d"></div></div>
-        </td>
-      </tr>
-    <tr class="total-row">
-      <td>TOTAL CONSOLIDADO</td>
-      <td class="num">R$&nbsp;145.534,00</td>
-      <td class="num ">R$&nbsp;0,00</td>
-      <td class="num ">R$&nbsp;0,00</td>
-      <td class="num">R$&nbsp;145.534,00</td>
-      <td class="num ">R$&nbsp;0,00</td>
-      <td class="num">100,0%</td>
-    </tr></tbody>
-        </table>
-      </div>
-      <div class="nota">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
-        <span>Nas contas de aplicação, <b>Entrada</b> corresponde ao valor aplicado e <b>Saída</b> ao valor resgatado. Aplicações e resgates são transferências entre contas da própria empresa e, por isso, aparecem nas duas pontas do consolidado sem alterar o saldo total.</span>
-      </div>
-    </div>
   </section>
 
   <section class="topic">
@@ -732,7 +554,7 @@
   Gestão financeira e BPO por <b>Reis e Mariano</b> · <span id="footerGerado">Base atualizada em 08/09/2026, 15:54</span>
 </footer>
 
-<div id="toast" class="show">Base atualizada: 4 conta(s) carregada(s).</div>
+<div id="toast"></div>
 <div id="pdfBuildArea"></div>
 
 <script type="application/json" id="painel-data">{
@@ -914,7 +736,6 @@ function renderCards(){
 
   const cardTotal = `
     <article class="card total">
-      <span class="accent"></span>
       <div class="total-left">
         <div class="card-top">
           <div class="card-avatar">${ICON_TOTAL}</div>
@@ -961,7 +782,6 @@ function renderCards(){
          </div>`;
     return `
     <article class="card">
-      <span class="accent" style="background:${c.cor}"></span>
       <div class="card-top">
         <div class="card-avatar" style="background:${hexA(c.cor,0.12)}; color:${c.cor}">${c.tipo==='investimento'?ICON_INVEST:ICON_BANCO}</div>
         <div class="card-ident">
@@ -980,59 +800,6 @@ function renderCards(){
   }).join('');
 
   el.innerHTML = cardTotal + cards;
-  document.getElementById('hintContas').textContent =
-    `Disponível em conta ${fmtBRL(d.tot.corrente)} · Aplicado ${fmtBRL(d.tot.invest)}`;
-}
-
-/* =========================================================================
-   RENDER - TABELA CONSOLIDADA
-   ========================================================================= */
-function celulaNum(v, classe){
-  const zero = Math.abs(v) < 0.005;
-  return `<td class="num ${zero ? 'zero' : (classe||'')}">${fmtBRL(v)}</td>`;
-}
-
-function renderTabelaConsolidada(){
-  const d = state.dados;
-  const total = d.tot.atual;
-  const linhas = d.contas.map(c => {
-    const share = total ? (c.atual / total) * 100 : 0;
-    const varZero = Math.abs(c.variacao) < 0.005;
-    const varCls = varZero ? 'zero' : (c.variacao > 0 ? 'in' : 'out');
-    const varTxt = varZero ? fmtBRL(0) : `${c.variacao>0?'+':'-'}${fmtBRL(Math.abs(c.variacao))}`;
-    return `
-      <tr>
-        <td class="conta">
-          <span class="dot" style="background:${c.cor}"></span>${esc(c.rotulo)}
-          <div class="sub" style="margin-left:18px">${c.tipo==='investimento'?'Aplicação financeira':'Conta corrente'}</div>
-        </td>
-        ${celulaNum(c.anterior)}
-        ${celulaNum(c.entrada, 'in')}
-        ${celulaNum(c.saida, 'out')}
-        <td class="num saldo ${c.atual<0?'neg':''}">${fmtBRL(c.atual)}</td>
-        <td class="num ${varCls}">${varTxt}</td>
-        <td class="num share-cell">
-          <span class="pct">${fmtPct(share)}</span>
-          <div class="meter"><div class="meter-fill" style="width:${Math.max(0,Math.min(100,share)).toFixed(2)}%; background:${c.cor}"></div></div>
-        </td>
-      </tr>`;
-  }).join('');
-
-  const t = d.tot;
-  const varZero = Math.abs(t.variacao) < 0.005;
-  const varTxt = varZero ? fmtBRL(0) : `${t.variacao>0?'+':'-'}${fmtBRL(Math.abs(t.variacao))}`;
-  const totalRow = `
-    <tr class="total-row">
-      <td>TOTAL CONSOLIDADO</td>
-      <td class="num">${fmtBRL(t.anterior)}</td>
-      <td class="num ${Math.abs(t.entrada)<0.005?'':'in'}">${fmtBRL(t.entrada)}</td>
-      <td class="num ${Math.abs(t.saida)<0.005?'':'out'}">${fmtBRL(t.saida)}</td>
-      <td class="num">${fmtBRL(t.atual)}</td>
-      <td class="num ${varZero?'':(t.variacao>0?'in':'out')}">${varTxt}</td>
-      <td class="num">100,0%</td>
-    </tr>`;
-
-  document.getElementById('tabelaConsolidadaBody').innerHTML = linhas + totalRow;
 }
 
 /* =========================================================================
@@ -1075,13 +842,9 @@ function renderDetalhe(){
    ========================================================================= */
 function renderAll(){
   const d = state.dados;
-  document.getElementById('periodoTexto').textContent = d.periodo ? `Período: ${d.periodo}` : 'Posição atual';
-  document.getElementById('clienteTexto').innerHTML = `Cliente: <b>${esc(d.cliente)}</b>`;
-  document.getElementById('atualizadoTexto').innerHTML = `Atualizado em <b>${esc(d.geradoEm)}</b>`;
   document.getElementById('footerGerado').textContent = `Base atualizada em ${d.geradoEm}`;
   document.getElementById('brandSub').textContent = d.periodo ? `Posição de ${d.periodo}` : 'Posição consolidada das contas bancárias';
   renderCards();
-  renderTabelaConsolidada();
   renderDetalhe();
 }
 
@@ -1250,7 +1013,21 @@ async function salvarArquivo(conteudo, nomeArquivo, mime){
 }
 
 document.getElementById('btnSalvarHtml').addEventListener('click', async () => {
-  const html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  // O toast não pode ser serializado junto, senão fica gravado no arquivo salvo.
+  const el = document.getElementById('toast');
+  const classes = el.className;
+  const msg = el.textContent;
+  el.className = '';
+  el.textContent = '';
+
+  let html;
+  try {
+    html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  } finally {
+    el.className = classes;
+    el.textContent = msg;
+  }
+
   const ok = await salvarArquivo(html, 'index.html', 'text/html');
   if (ok) toast('index.html salvo. Suba o arquivo na pasta do repositório para publicar o painel.');
 });
@@ -1288,22 +1065,6 @@ function montarPaginaPdf(){
   const t = d.tot;
   const total = t.atual;
 
-  const linhas = d.contas.map(c => {
-    const share = total ? (c.atual / total) * 100 : 0;
-    const varZero = Math.abs(c.variacao) < 0.005;
-    const varTxt = varZero ? fmtBRL(0) : `${c.variacao>0?'+':'-'}${fmtBRL(Math.abs(c.variacao))}`;
-    const z = v => Math.abs(v) < 0.005;
-    return `<tr>
-      <td><span class="pdf-dot" style="background:${c.cor}"></span>${esc(c.rotulo)}</td>
-      <td class="num ${z(c.anterior)?'zero':''}">${fmtBRL(c.anterior)}</td>
-      <td class="num ${z(c.entrada)?'zero':'in'}">${fmtBRL(c.entrada)}</td>
-      <td class="num ${z(c.saida)?'zero':'out'}">${fmtBRL(c.saida)}</td>
-      <td class="num saldo">${fmtBRL(c.atual)}</td>
-      <td class="num ${varZero?'zero':(c.variacao>0?'in':'out')}">${varTxt}</td>
-      <td class="num">${fmtPct(share)}</td>
-    </tr>`;
-  }).join('');
-
   const varZeroT = Math.abs(t.variacao) < 0.005;
   const varTxtT = varZeroT ? fmtBRL(0) : `${t.variacao>0?'+':'-'}${fmtBRL(Math.abs(t.variacao))}`;
 
@@ -1337,31 +1098,6 @@ function montarPaginaPdf(){
     </div>
 
     <div class="pdf-sec">
-      <div class="pdf-sec-title">Movimentação consolidada por conta</div>
-      <table>
-        <thead>
-          <tr>
-            <th>Conta</th><th class="num">Saldo anterior</th><th class="num">Entrada</th><th class="num">Saída</th>
-            <th class="num">Saldo atual</th><th class="num">Variação</th><th class="num">% saldo</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${linhas}
-          <tr class="tot">
-            <td>TOTAL CONSOLIDADO</td>
-            <td class="num">${fmtBRL(t.anterior)}</td>
-            <td class="num ${Math.abs(t.entrada)<0.005?'':'in'}">${fmtBRL(t.entrada)}</td>
-            <td class="num ${Math.abs(t.saida)<0.005?'':'out'}">${fmtBRL(t.saida)}</td>
-            <td class="num">${fmtBRL(t.atual)}</td>
-            <td class="num">${varTxtT}</td>
-            <td class="num">100,0%</td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="pdf-nota">Nas contas de aplicação, Entrada corresponde ao valor aplicado e Saída ao valor resgatado. Aplicações e resgates são transferências entre contas da própria empresa.</div>
-    </div>
-
-    <div class="pdf-sec">
       <div class="pdf-sec-title">Detalhamento por conta</div>
       <div class="pdf-contas">
         ${d.contas.map(c => {
@@ -1385,6 +1121,7 @@ function montarPaginaPdf(){
           </div>`;
         }).join('')}
       </div>
+      <div class="pdf-nota">Nas contas de aplicação, Entrada corresponde ao valor aplicado e Saída ao valor resgatado. Aplicações e resgates são transferências entre contas da própria empresa.</div>
     </div>
 
     <div class="pdf-footer">
@@ -1447,6 +1184,10 @@ document.getElementById('btnBaixarPdf').addEventListener('click', async (e) => {
    INIT
    ========================================================================= */
 (function init(){
+  // Garante que nenhum toast gravado em versões salvas do arquivo apareça ao abrir.
+  const t = document.getElementById('toast');
+  t.className = '';
+  t.textContent = '';
   try{
     const raw = JSON.parse(document.getElementById('painel-data').textContent);
     state.dados = normalizar(raw);
